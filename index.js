@@ -24,32 +24,18 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/client/index.html');
 });
 
+app.get('/tictactoe', (req, res) => {
+  res.sendFile(__dirname + '/Games/RealTimeTicTacToe/ttt.html');
+});
+
+
+
 
 
 let activeUsers = [];
+let arr=[]
+let playingArray=[]
 
-
-
-const { spawn } = require('child_process');
-
-function invokeServer2() {
-  const child = spawn('node', ['./Games/RealTimeTicTacToe/server2.js']);
-
-  child.stdout.on('data', (data) => {
-    console.log(`Server2 Output: ${data}`);
-  });
-
-  child.stderr.on('data', (data) => {
-    console.error(`Server2 Error: ${data}`);
-  });
-
-  child.on('close', (code) => {
-    console.log(`Server2 process exited with code ${code}`);
-  });
-}
-
-// Call the function to invoke Server2
-invokeServer2();
 
 io.on("connection", (socket) => {
   socket.on("user joined", (username) => {
@@ -97,6 +83,69 @@ io.on("connection", (socket) => {
   socket.on("stop typing", () => {
     socket.broadcast.emit("stop typing");
   });
+
+  //  Game handle 
+  
+  socket.on("find",(e)=>{
+
+    if(e.name!=null){
+
+        arr.push(e.name)
+
+        if(arr.length>=2){
+            let p1obj={
+                p1name:arr[0],
+                p1value:"X",
+                p1move:""
+            }
+            let p2obj={
+                p2name:arr[1],
+                p2value:"O",
+                p2move:""
+            }
+
+            let obj={
+                p1:p1obj,
+                p2:p2obj,
+                sum:1
+            }
+            playingArray.push(obj)
+
+            arr.splice(0,2)
+
+            io.emit("find",{allPlayers:playingArray})
+
+        }
+
+    }
+
+  })
+
+  socket.on("playing",(e)=>{
+      if(e.value=="X"){
+          let objToChange=playingArray.find(obj=>obj.p1.p1name===e.name)
+
+          objToChange.p1.p1move=e.id
+          objToChange.sum++
+      }
+      else if(e.value=="O"){
+          let objToChange=playingArray.find(obj=>obj.p2.p2name===e.name)
+
+          objToChange.p2.p2move=e.id
+          objToChange.sum++
+      }
+
+      io.emit("playing",{allPlayers:playingArray})
+
+  })
+
+  socket.on("gameOver",(e)=>{
+      playingArray=playingArray.filter(obj=>obj.p1.p1name!==e.name)
+      console.log(playingArray)
+      console.log("lol")
+  })
+
+
 });
 
 http.listen(port, () => {
