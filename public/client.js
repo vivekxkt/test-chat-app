@@ -43,7 +43,7 @@ var input = document.getElementById("input");
 // Games 
 const invokeButton = document.getElementById('invokeButton');
 invokeButton.addEventListener('click', () => {
-  window.open('http://localhost:3000/tictactoe', '_blank');
+  window.open('https://chat-app-hts9.onrender.com/tictactoe', '_blank');
 });
 
 
