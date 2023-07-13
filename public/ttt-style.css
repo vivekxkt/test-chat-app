@@ -1,0 +1,159 @@
+/* Reset some default styles */
+* {
+  
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styles */
+body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  text-align: center;
+  background-image: url(https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28313.jpg);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  
+}
+
+
+.open-screen{
+  display: block;
+}
+/* Heading styles */
+h1 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+  color:  #f7f7f7;
+}
+
+#enterName{
+  margin-bottom: 1rem;
+  color:  #f7f7f7;
+}
+#name{
+  margin-bottom: 1rem;
+  width: 12rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+  padding-left: 1rem;
+  outline: none;
+  
+}
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Player info styles */
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+
+.player-info p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Name input styles */
+.name-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.name-input p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-right: 10px;
+  
+}
+
+.name-input input {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+p{
+  font-size: 1.1rem;
+  padding: 1rem;
+
+  color: #f7f7f7;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color:  #f7f7f7;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Loading text styles */
+#loading {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 10px;
+  margin-top: 0.5rem;
+}
+
+/* Game board styles */
+#bigcont {
+  margin-top: 20px;
+}
+
+#cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  color: #333;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 500px) {
+  .player-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

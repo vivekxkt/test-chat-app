@@ -168,6 +168,23 @@
     margin-bottom: 4px;
     color: white;
   }
+  .games{
+    width: 50%;
+    
+    text-align: center;
+  }
+  button{
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(45deg,rgba(255, 0, 0, 0.774),rgba(0, 0, 255, 0.768));
+    color: white;
+
+  }
+  span{
+    font-size: 0.8rem;
+    color: rgb(144, 13, 144);
+  }
  
 
   
