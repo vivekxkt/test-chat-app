@@ -32,6 +32,7 @@
         <input type="text" placeholder="Name" id="name" autocomplete="off">
     </div>
     <button id="find">Search for a player</button>
+    <button id="invite">Invite</button>
     <div id="loading">Waiting for opponent ... </div>
    
 
@@ -56,6 +57,18 @@
 
 
 <script>
+
+    var linkIcon = document.getElementById("invite");
+
+      linkIcon.addEventListener("click", function() {
+        var link = "https://chat-app-exwk.onrender.com/tictactoe"; // Replace with your actual link
+
+        // Open WhatsApp with the link
+        var whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(link);
+        window.open(whatsappURL, "_blank");
+      });
+
+
     document.getElementById("loading").style.display = "none"
     document.getElementById("bigcont").style.display = "none"
     document.getElementById("userCont").style.display = "none"
