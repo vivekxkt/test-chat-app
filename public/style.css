@@ -1,0 +1,228 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 1rem 1 rem;
+    padding: 0;
+    font-family: 'Convergence';
+    background-color: #f0f0f0;
+   
+  }
+  
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    height: 500px; /* Adjust the desired height for the chat box */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .chat-title {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .chat-broadcast {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    margin-bottom: 20px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #def3ff;
+    border-radius: 4px;
+    color: #333;
+  }
+  
+  .user-joined {
+    /* Styles for user joined messages */
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0; /* Customize the background color for user joined */
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .user-left {
+    /* Styles for user left messages */
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #ffcccc; /* Customize the background color for user left */
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .broadcast-message {
+    /* Styles for broadcast messages */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #ffcccc; /* Customize the background color */
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px; /* Customize the font size */
+  }
+  
+  .chat-typing {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #c5e0ff;
+    border-radius: 4px;
+    color: #333;
+    font-style: italic;
+  }
+  
+  .chat-form {
+    display: flex;
+    align-items: flex-end; /* Align items at the bottom */
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .chat-button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    background-color: #843a23;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .chat-button:hover {
+    background-color:#843a23;
+  }
+  
+  .join-button {
+    margin-bottom: 10px;
+  }
+  
+  #typingMessage {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px;
+    padding-left: 5px;
+  }
+  
+  /* Members */
+  .members-icon {
+    position: relative;
+  }
+  
+  .members-icon img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .members-popup {
+    display: none;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    width: max-content;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  
+  .members-popup .member {
+    padding: 4px 8px;
+    background-color: #4CAF50;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    color: white;
+  }
+ 
+
+  
+  /* Share popup */
+
+
+
+
+
+
+
+
+
+  /* Responsive Styles */
+  @media(max-width:477px) {
+    body {
+      margin: 0.5rem;
+      height: 100vh;
+    }
+  
+    .chat-container {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .chat-header {
+      margin-bottom: 10px;
+    }
+  
+    .chat-messages {
+      margin-bottom: 10px;
+    }
+  
+    .chat-form {
+      align-items: flex-start;
+    }
+  
+    .chat-input {
+      margin-bottom: 10px;
+    }
+    .chat-button {
+      
+      padding: 8px 16px;
+      margin-left: 10px;
+      
+      background-color: #843a23;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .chat-button:hover {
+      background-color: #662d1c;
+    }
+    
+  }

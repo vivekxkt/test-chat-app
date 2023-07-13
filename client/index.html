@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/jpg" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwX8drcK3yezrJSwbQcARz832jrs0Ra_5FOw&usqp=CAU"/>
+    
+  </head>
+  <body>
+
+  
+
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="chat-title">Chat Room</div>
+        
+        <div class="members-icon">
+          <img src="https://www.svgrepo.com/show/529680/link.svg" alt="Link Icon" id="linkIcon">
+          <img src="https://www.svgrepo.com/show/525593/users-group-rounded.svg" alt="Members Icon" id="membersIcon">
+          <div class="members-popup" id="membersPopup"></div>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="messages">
+      </div>
+      <form class="chat-form" id="form" action="">
+        <input class="chat-input" id="input" autocomplete="off" placeholder="Type your message..." />
+        <button class="chat-button">Send</button>
+      </form>
+
+    </div>
+    <button id="invokeButton">Invoke Server2</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+   
+    <script src="client.js"></script>
+
+
+
+
+    <script>
+      // JavaScript code
+      var linkIcon = document.getElementById("linkIcon");
+
+      linkIcon.addEventListener("click", function() {
+        var link = "https://chat-app-exwk.onrender.com/"; // Replace with your actual link
+
+        // Open WhatsApp with the link
+        var whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(link);
+        window.open(whatsappURL, "_blank");
+      });
+
+
+      
+      
+    </script>
+
+
+
+
+  </body>
+</html>
