@@ -1,14 +1,12 @@
 const express=require("express")
 const app=express()
 
+
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 const path=require("path")
-const http=require("http")
-const {Server}=require("socket.io")
-
-
-const server=http.createServer(app)
-
-const io=new Server(server)
+const port = process.env.PORT || 4000;
 app.use(express.static(path.resolve("")))
 
 let arr=[]
@@ -88,6 +86,7 @@ app.get('/', (req, res) => {
     res.sendFile(filePath);
   });
 
-server.listen(4000,()=>{
-    console.log("Server 2 is Up !")
-})
+  http.listen(port, () => {
+    console.log(`Socket.IO server running at http://localhost:${port}/`);
+  });
+  
