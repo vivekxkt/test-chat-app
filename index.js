@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/client/index.html');
 });
 
-app.get('/tictactoe', (req, res) => {
+app.get('https://chat-app-hts9.onrender.com/tictactoe', (req, res) => {
   res.sendFile(__dirname + '/Games/RealTimeTicTacToe/ttt.html');
 });
 
